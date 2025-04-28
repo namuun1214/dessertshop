@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orgilz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  font-family: 'Segoe UI', sans-serif;
+  height: 100%;
+  background: #f5f5f5;
+}
+.menu-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 16px 40px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+}
+.logo {
+  font-size: 1.8rem;
+  color: white;
+  font-weight: bold;
+}
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+.menu li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 14px;
+  transition: background 0.3s ease;
+  display: block;
+}
+.menu li a:hover {
+  background: #34495e;
+  border-radius: 4px;
+}
+.dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #34495e;
+  display: none;
+  flex-direction: column;
+  min-width: 160px;
+  border-radius: 4px;
+  z-index: 99;
+}
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+.dropdown-menu li a {
+  padding: 12px 16px;
+  white-space: nowrap;
+}
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+#menu-toggle {
+  display: none;
+}
+@media (max-width: 768px) {
+  .menu-bar {
+    flex-wrap: wrap;
+  }
+  .hamburger {
+    display: block;
+  }
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    background: rgba(0, 0, 0, 0.6);
+    margin-top: 12px;
+    gap: 0;
+  }
+  .menu li {
+    border-top: 1px solid #3c5a72;
+  }
+  #menu-toggle:checked + .hamburger + .menu {
+    display: flex;
+  }
+  .dropdown:hover .dropdown-menu {
+    position: static;
+  }
+}
+.hero {
+  background: url('https://images.unsplash.com/photo-1555992336-03a23c9d74db') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 0 20px;
+}
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+}
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 32px;
+}
+.btn {
+  background-color: #ffcc00;
+  color: #333;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background-color: #e6b800;
+}
+</style>
+<body>
+  <nav class="menu-bar">
+    <div class="logo">Orgilz</div>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+    <ul class="menu">
+      <li><a href="Orgilz.html">Home</a></li>
+      <li><a href="Orgilz1.html">Menu</a></li>
+      <li class="dropdown">
+        <a href="#">More▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="orgilz2.html">Drinks</a></li>
+          <li><a href="orgilz3.html">Dessert</a></li>
+        </ul>
+      </li>
+      <li><a href="Orgilz4.html">Basket</a></li>
+      <li><a href="orgilz5.html">Contact</a></li>
+    </ul>
+  </nav>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Orgilz</h1>
+      <p>Where flavor meets elegance.</p>
+      <a href="file:///C:/Users/uugan/OneDrive/Documents/tsogtiis%20kod/Orgilz1.html" class="btn">Explore Our Menu</a>
+    </div>
+  </header>
+</body>
+</html>
